@@ -50,6 +50,11 @@
 
     <main>
         <article class="questions">
+            <ul>
+                @foreach($faqs as $faq)
+                    <li>{{ $faq->question }}</li>
+                @endforeach
+            </ul>
             <section>
                 <details>
                     <summary class="faq-summary">

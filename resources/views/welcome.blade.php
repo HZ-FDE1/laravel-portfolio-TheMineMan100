@@ -164,7 +164,7 @@
     </div>
     <div class="home-figures">
         <figure id="code-screenshot-figure">
-            <img src="./resources/game-code-screenshot1-crop.png"
+            <img src="./img/game-code-screenshot1-crop.png"
                  alt="Screenshot of game code"
                  id="game-code-screenshot"
                  loading="lazy">

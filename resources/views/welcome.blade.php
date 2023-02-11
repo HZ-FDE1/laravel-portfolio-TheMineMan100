@@ -1,53 +1,4 @@
-{{--<!doctype html>--}}
-{{--<html lang="en">--}}
-{{--<head>--}}
-{{--    <meta charset="UTF-8">--}}
-{{--    <meta name="viewport"--}}
-{{--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"--}}
-{{--    >--}}
-{{--    <meta http-equiv="X-UA-Compatible"--}}
-{{--          content="ie=edge"--}}
-{{--    >--}}
-{{--    <title>{{ env('APP_NAME') }}</title>--}}
-{{--    --}}{{-- Load the default generated javascript and stylesheets --}}
-{{--    @vite([ 'resources/js/app.js', 'resources/sass/app.scss' ])--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--<nav class="navbar is-primary  has-text-white" >--}}
-{{--    <div class="container">--}}
-{{--        <div class="navbar-brand">--}}
-{{--            <a href="/" class="navbar-item">--}}
-{{--                --}}{{-- Use the APP_NAME setting from the .env file --}}
-{{--                <strong>{{ env('APP_NAME') }}</strong>--}}
-{{--            </a>--}}
-{{--            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">--}}
-{{--                <span aria-hidden="true"></span>--}}
-{{--                <span aria-hidden="true"></span>--}}
-{{--                <span aria-hidden="true"></span>--}}
-{{--            </a>--}}
-{{--        </div>--}}
-{{--        <div class="navbar-menu" id="navMenu">--}}
-{{--            <div class="navbar-start">--}}
-{{--                <a class="navbar-item" href="/posts/my-first-post">My first post</a>--}}
-{{--                <a class="navbar-item" href="/posts/my-second-post">My second post</a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</nav>--}}
-
-{{--<section class="section">--}}
-{{--    <div class="container">--}}
-{{--        <div class="content">--}}
-{{--            <h1>Welcome to my portfolio</h1>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-
-
-{{--</body>--}}
-{{--</html>--}}
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,20 +13,20 @@
     <div class="content">
         <nav>
             <ul>
-                <li class="current"><a href="./index.html">Home</a></li>
-                <li><a href="./profile.html">Profile</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li class="current"><a href="/">Home</a></li>
+                <li><a href="./profile">Profile</a></li>
+                <li><a href="./dashboard">Dashboard</a></li>
                 <li class="blog-dropdown">
-                    <a href="./blog.html" class="blog-dropdown-button">Blog</a>
+                    <a href="./blog" class="blog-dropdown-button">Blog</a>
                     <div class="blog-dropdown-content">
-                        <a href="./post5-profession.html">Profession</a>
-                        <a href="./post4-feedback.html">Feedback</a>
-                        <a href="./post3-experience.html">Programming Experience</a>
-                        <a href="./post2-swot.html">SWOT Analysis</a>
-                        <a href="./post1-study-choice.html">Study Choice</a>
+                        <a href="./post5-profession">Profession</a>
+                        <a href="./post4-feedback">Feedback</a>
+                        <a href="./post3-experience">Programming Experience</a>
+                        <a href="./post2-swot">SWOT Analysis</a>
+                        <a href="./post1-study-choice">Study Choice</a>
                     </div>
                 </li>
-                <li><a href="./faq.html">FAQ</a></li>
+                <li><a href="./faq">FAQ</a></li>
             </ul>
         </nav>
         <aside>

@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +18,12 @@ use App\Http\Controllers\PostsController;
 |
 */
 
+Route::get('/', [WelcomeController::class, 'show']);
+
 Route::get('/posts/{post}', [PostsController::class, 'show']);
 
-Route::get('/', [WelcomeController::class, 'show']);
+Route::get('/profile/', [ProfileController::class, 'show']);
+
+Route::get('/dashboard/', [DashboardController::class, 'show']);
+
+Route::get('/faq/', [FaqController::class, 'show']);

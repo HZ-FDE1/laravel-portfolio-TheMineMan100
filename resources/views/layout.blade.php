@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield ('title')
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 @yield ('body-start')
 @yield ('header')
@@ -14,10 +14,10 @@
         <nav>
             <ul>
                 <li class="{{ Request::path() === '/' ? 'current' : '' }}"><a href="/">Home</a></li>
-                <li class="{{ Request::path() === 'profile' ? 'current' : '' }}"><a href="./profile">Profile</a></li>
-                <li class="{{ Request::path() === 'dashboard' ? 'current' : '' }}"><a href="./dashboard">Dashboard</a></li>
+                <li class="{{ Request::path() === 'profile' ? 'current' : '' }}"><a href="/profile">Profile</a></li>
+                <li class="{{ Request::path() === 'dashboard' ? 'current' : '' }}"><a href="/dashboard">Dashboard</a></li>
                 <li class="blog-dropdown">
-                    <a href="./blog" class="{{ Request::path() === 'post' ? 'current' : '' }} blog-dropdown-button">Blog</a>
+                    <a href="/articles" class="{{ Request::path() === 'articles' ? 'current' : '' }} blog-dropdown-button">Blog</a>
                     <div class="blog-dropdown-content">
                         <a href="./post5-profession">Profession</a>
                         <a href="./post4-feedback">Feedback</a>

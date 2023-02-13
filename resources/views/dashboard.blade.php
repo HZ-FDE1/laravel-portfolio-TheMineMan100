@@ -36,6 +36,23 @@
                 <th>Exam</th>
                 <th>Grade</th>
             </tr>
+            @foreach($grades as $grade)
+                <tr>
+                    <td>Quartile name</td>
+                    <td>{{ $grade->course_name }}</td>
+                    <td class="dashboard-number">{{ $grade->ec }}</td>
+                    <td>{{ $grade->test_name }}</td>
+                    <td class="dashboard-number">
+                        @if($grade->best_grade)
+                            {{ $grade->best_grade }}
+                        @else
+                            N/A
+                        @endif
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+        <table>
             <tr>
                 <td rowspan="8">1 - Computer Science</td>
                 <td>Program- and Career Orientation</td>

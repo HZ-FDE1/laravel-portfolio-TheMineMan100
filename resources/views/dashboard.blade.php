@@ -1,182 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layout')
+
+@section('title')
     <title>Dashboard - Portfolio Site</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="javascript/progress-bar.js">
-</head>
-<body onload="javascript:move()">
-<script src="../js/progress-bar.js"></script>
-<div class="content">
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="./profile">Profile</a></li>
-            <li class="current"><a href="./dashboard">Dashboard</a></li>
-            <li class="blog-dropdown">
-                <a href="./blog" class="blog-dropdown-button">Blog</a>
-                <div class="blog-dropdown-content">
-                    <a href="./post5-profession">Profession</a>
-                    <a href="./post4-feedback">Feedback</a>
-                    <a href="./post3-experience">Programming Experience</a>
-                    <a href="./post2-swot">SWOT Analysis</a>
-                    <a href="./post1-study-choice">Study Choice</a>
-                </div>
-            </li>
-            <li><a href="./faq">FAQ</a></li>
-        </ul>
-    </nav>
-    <aside>
-        <ul>
-            <li><a target="_blank" href="https://hz.nl/uploads/documents/1.4-Over-de-HZ/1.4.3.-Regelingen-en-documenten/NL/5.-Onderwijs-examenregelingen/Onderwijs-en-examenregeling/OER-HZ-Bacheloropleiding-voltijd-2022-2023-DEF-13-juni.pdf">HZ CER</a></li>
-            <li><a target="_blank"
-                   href="https://hz.nl/uploads/documents/1.4-Over-de-HZ/1.4.3.-Regelingen-en-documenten/OERS/2022-2023/IR-CER-HZ-B-HBO-ICT-full-time-2022-2023-DEF.pdf">
-                    HZ IR
-                </a>
-            </li>
-            <li><a target="_blank" href="https://learn.hz.nl/course/view.php?id=23602#section-1">Learn</a></li>
-            <li><a target="_blank"
-                   href="https://teams.microsoft.com/l/team/19%3a2e2afa0286b04932be16cb8ad2d9d2c0%40thread.skype/conversations?groupId=95bddebc-a340-4d88-81fc-b80e0bfc70c3&tenantId=4c16deb3-342d-4fca-bcd5-b1429308034c">
-                    Teams
-                </a>
-            </li>
-            <li><a target="_blank" href="https://hz.osiris-student.nl/#/home">Study Progress</a></li>
-            <li><a target="_blank" href="https://github.com/HZ-HBO-ICT">Github</a></li>
-        </ul>
-    </aside>
+@endsection
+
+@section('body-start')
+    <body onload="javascript:move()">
+    <script src="../js/progress-bar.js"></script>
+@endsection
+
+@section('header')
     <header>Dashboard</header>
+@endsection
 
-    <main>
-        <article>
-            <!-- Credit to W3Schools for progress bar code inspiration -->
-            <div class="nbsa-container">
-                <h2>NBSA and EC Progress</h2>
-                <div class="bar-background">
-                    <div id="nbsa-progress-bar" class="nbsa-container main-bar">
-                    </div>
+@section('content')
+    <article>
+        <!-- Credit to W3Schools for progress bar code inspiration -->
+        <div class="nbsa-container">
+            <h2>NBSA and EC Progress</h2>
+            <div class="bar-background">
+                <div id="nbsa-progress-bar" class="nbsa-container main-bar">
                 </div>
-                <p id="progress-bar-text"><span id="ec-count">0</span> of 60 EC
-                    (must end higher than 45 EC due to NBSA)</p>
             </div>
+            <p id="progress-bar-text"><span id="ec-count">0</span> of 60 EC
+                (must end higher than 45 EC due to NBSA)</p>
+        </div>
 
-            <h2>Table of Exams</h2>
+        <h2>Table of Exams</h2>
 
-            <table>
-                <tr>
-                    <th>Quartile</th>
-                    <th>Course</th>
-                    <th>EC</th>
-                    <th>Exam</th>
-                    <th>Grade</th>
-                </tr>
-                <tr>
-                    <td rowspan="8">1 - Computer Science</td>
-                    <td>Program- and Career Orientation</td>
-                    <td class="dashboard-number">2.5</td>
-                    <td>Assessment website</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>Computer Science Basics</td>
-                    <td class="dashboard-number">5.0</td>
-                    <td>Theory exam</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>Programming Basics</td>
-                    <td class="dashboard-number">5.0</td>
-                    <td>Casus test</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td rowspan="3">PPD-E: Dutch Class</td>
-                    <td rowspan="3" class="dashboard-number">12.5</td>
-                    <td>Dutch test (x0.05)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>English test (x0.05)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>Criterium focused interview (x0.9)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">Personality</td>
-                    <td class="dashboard-number">1.25</td>
-                    <td>IT Personality - projectweek 1</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td class="dashboard-number">1.25</td>
-                    <td>IT Personality 1</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">2 - Game Development</td>
-                    <td rowspan="2">Object-Oriented Programming</td>
-                    <td rowspan="2" class="dashboard-number">10.0</td>
-                    <td>Group assignment (x0.5)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>Casus test (x0.5)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td rowspan="4">3 - Modern Software Development</td>
-                    <td>Framework Development 1</td>
-                    <td class="dashboard-number">5.0</td>
-                    <td>Casus test</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td rowspan="3">Framework Project 1</td>
-                    <td rowspan="3" class="dashboard-number">7.5</td>
-                    <td>Criterium oriented interview (x0.33)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>Assignment (x0.33)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>Test (x0.34)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td rowspan="5">4 - Modern Software Development</td>
-                    <td rowspan="3">Framework Project 2</td>
-                    <td rowspan="3" class="dashboard-number">10.0</td>
-                    <td>Final delivery (x0.25)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>Acceptance test (x0.25)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td>IT-development portfolio (x0.5)</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">Personality</td>
-                    <td class="dashboard-number">1.25</td>
-                    <td>IT Personality International week</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-                <tr>
-                    <td class="dashboard-number">1.25</td>
-                    <td>IT Personality 2</td>
-                    <td class="dashboard-number">N/A</td>
-                </tr>
-            </table>
-        </article>
-    </main>
-</div>
-</body>
-</html>
+        <table>
+            <tr>
+                <th>Quartile</th>
+                <th>Course</th>
+                <th>EC</th>
+                <th>Exam</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td rowspan="8">1 - Computer Science</td>
+                <td>Program- and Career Orientation</td>
+                <td class="dashboard-number">2.5</td>
+                <td>Assessment website</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>Computer Science Basics</td>
+                <td class="dashboard-number">5.0</td>
+                <td>Theory exam</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>Programming Basics</td>
+                <td class="dashboard-number">5.0</td>
+                <td>Casus test</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td rowspan="3">PPD-E: Dutch Class</td>
+                <td rowspan="3" class="dashboard-number">12.5</td>
+                <td>Dutch test (x0.05)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>English test (x0.05)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>Criterium focused interview (x0.9)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Personality</td>
+                <td class="dashboard-number">1.25</td>
+                <td>IT Personality - projectweek 1</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td class="dashboard-number">1.25</td>
+                <td>IT Personality 1</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2 - Game Development</td>
+                <td rowspan="2">Object-Oriented Programming</td>
+                <td rowspan="2" class="dashboard-number">10.0</td>
+                <td>Group assignment (x0.5)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>Casus test (x0.5)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td rowspan="4">3 - Modern Software Development</td>
+                <td>Framework Development 1</td>
+                <td class="dashboard-number">5.0</td>
+                <td>Casus test</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Framework Project 1</td>
+                <td rowspan="3" class="dashboard-number">7.5</td>
+                <td>Criterium oriented interview (x0.33)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>Assignment (x0.33)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>Test (x0.34)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td rowspan="5">4 - Modern Software Development</td>
+                <td rowspan="3">Framework Project 2</td>
+                <td rowspan="3" class="dashboard-number">10.0</td>
+                <td>Final delivery (x0.25)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>Acceptance test (x0.25)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td>IT-development portfolio (x0.5)</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Personality</td>
+                <td class="dashboard-number">1.25</td>
+                <td>IT Personality International week</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+            <tr>
+                <td class="dashboard-number">1.25</td>
+                <td>IT Personality 2</td>
+                <td class="dashboard-number">N/A</td>
+            </tr>
+        </table>
+    </article>
+@endsection

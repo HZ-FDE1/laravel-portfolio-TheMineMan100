@@ -4,10 +4,6 @@
     <title>Blog Articles - Portfolio Site</title>
 @endsection
 
-@section ('body-start')
-    <body>
-@endsection
-
 @section('header')
     <header>Blog Articles</header>
 @endsection

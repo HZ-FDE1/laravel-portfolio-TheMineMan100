@@ -4,10 +4,6 @@
     <title>Home - Portfolio Site</title>
 @endsection
 
-@section ('body-start')
-    <body>
-@endsection
-
 @section ('header')
     <header>Hello!</header>
 @endsection

@@ -7,7 +7,7 @@
     @yield ('title')
     <link rel="stylesheet" href="/css/style.css">
 </head>
-@yield ('body-start')
+<body>
 @yield ('header')
 @yield ('div-id')
     <div class="content">

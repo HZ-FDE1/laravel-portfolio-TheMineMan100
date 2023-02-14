@@ -4,10 +4,6 @@
     <title>My Profile - Portfolio Site</title>
 @endsection
 
-@section ('body-start')
-    <body>
-@endsection
-
 @section('header')
     <header>My Profile</header>
 @endsection
@@ -57,17 +53,6 @@
             </section>
         </div>
     </article>
-
-        <ul>
-            @foreach($articles as $article)
-                <li>
-                    <h3>
-                        <a href="/articles/{{ $article->id }}">{{ $article->title }}</a>
-                    </h3>
-                    <p>{{ $article->excerpt }}</p>
-                </li>
-            @endforeach
-        </ul>
 @endsection
 
 @section('figures')

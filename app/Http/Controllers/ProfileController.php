@@ -10,8 +10,6 @@ class ProfileController extends Controller
 {
     public function show()
     {
-        return view('profile', [
-            'articles' => Article::take(3)->latest()->get()
-        ]);
+        return view('profile');
     }
 }

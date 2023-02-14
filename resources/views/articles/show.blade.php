@@ -4,10 +4,6 @@
     <title>{{ $article->title }} - Portfolio Site</title>
 @endsection
 
-@section ('body-start')
-    <body>
-@endsection
-
 @section('header')
     <header>{{ $article->title }}</header>
 @endsection

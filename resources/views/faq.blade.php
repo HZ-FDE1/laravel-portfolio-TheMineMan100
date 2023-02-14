@@ -4,10 +4,6 @@
     <title>FAQ - Portfolio Site</title>
 @endsection
 
-@section('body-start')
-    <body></body>
-@endsection
-
 @section('header')
     <header>Frequently Asked Questions</header>
 @endsection

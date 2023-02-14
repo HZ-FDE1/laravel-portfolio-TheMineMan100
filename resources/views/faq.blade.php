@@ -13,6 +13,9 @@
         <ul>
             @foreach($faqs as $faq)
                 <li>{{ $faq->question }}</li>
+                <li>{{ $faq->answer }}</li>
+                <li><a href="{{ $faq->link }}">Relevant link</a> (Links to: {{ $faq->link }})</li>
+                <br>
             @endforeach
         </ul>
         <section>

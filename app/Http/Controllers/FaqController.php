@@ -18,9 +18,15 @@ class FaqController extends Controller
         return view('faqs.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
+        $faq = new Faq();
+        $faq->question = request('question');
+        $faq->answer = request('answer');
+        $faq->link = request('link');
+        $faq->save();
 
+        redirect('/faqs');
     }
 
     public function show(Faq $faq)
@@ -28,14 +34,23 @@ class FaqController extends Controller
 
     }
 
-    public function edit(Faq $faq)
+    public function edit($id)
     {
+        $faq = Faq::find($id);
 
+        return view('faqs.edit', compact('faq'));
     }
 
-    public function update(Request $request, Faq $faq)
+    public function update($id)
     {
+        $faq = Faq::find($id);
 
+        $faq->question = request('question');
+        $faq->answer = request('answer');
+        $faq->link = request('link');
+        $faq->save();
+
+        return redirect('/faqs');
     }
 
     public function destroy(Faq $faq)

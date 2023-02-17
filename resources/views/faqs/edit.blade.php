@@ -1,41 +1,42 @@
 @extends('layout')
 
 @section('title')
-    <title>Create Article - Portfolio Site</title>
+    <title>Edit FAQ - Portfolio Site</title>
 @endsection
 
 @section('header')
-    <header>Create New Blog Article</header>
+    <header>Edit Frequently Asked Question</header>
 @endsection
 
 @section('content')
     <article>
         <div id="wrapper">
             <div id="page" class="container">
-                <form method="POST" action="/articles">
+                <form method="POST" action="/faqs/{{ $faq->id }}">
                     @csrf
+                    @method('PUT')
 
                     <div class="field">
-                        <label class="label" for="title">Title</label>
+                        <label class="label" for="question">Question</label>
 
                         <div class="control">
-                            <input class="input" type="text" name="title" id="title" size="60">
+                            <input class="input" type="text" name="question" id="question" value="{{ $faq->question }}" size="60">
                         </div>
                     </div>
 
                     <div class="field">
-                        <label class="label" for="excerpt">Excerpt</label>
+                        <label class="label" for="answer">Answer</label>
 
                         <div class="control">
-                            <textarea name="excerpt" id="excerpt" cols="60" rows="6"></textarea>
+                            <textarea name="answer" id="answer" cols="60" rows="12">{{ $faq->answer }}</textarea>
                         </div>
                     </div>
 
                     <div class="field">
-                        <label class="label" for="body">Body</label>
+                        <label class="label" for="link">Link</label>
 
                         <div class="control">
-                            <textarea name="body" id="body" cols="60" rows="12"></textarea>
+                            <input class="input" type="text" name="link" id="link" value="{{ $faq->link }}" size="60">
                         </div>
                     </div>
 

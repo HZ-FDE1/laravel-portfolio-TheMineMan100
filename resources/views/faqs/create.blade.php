@@ -19,7 +19,7 @@
                         <label class="label" for="question">Question</label>
 
                         <div class="control">
-                            <input class="input" type="text" name="question" id="question">
+                            <input class="input" type="text" name="question" id="question" size="60">
                         </div>
                     </div>
 
@@ -27,7 +27,7 @@
                         <label class="label" for="answer">Answer</label>
 
                         <div class="control">
-                            <input class="textarea" type="text" name="answer" id="answer">
+                            <textarea name="answer" id="answer" cols="60" rows="12"></textarea>
                         </div>
                     </div>
 
@@ -35,7 +35,7 @@
                         <label class="label" for="link">Link</label>
 
                         <div class="control">
-                            <input class="textarea" type="text" name="link" id="link">
+                            <input class="textarea" type="text" name="link" id="link" size="60">
                         </div>
                     </div>
 

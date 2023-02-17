@@ -30,11 +30,3 @@ Route::get('/dashboard/', [DashboardController::class, 'show']);
 Route::resource('/articles', ArticlesController::class);
 
 Route::resource('/faqs', FaqController::class);
-
-//Route::get('/faqs', [FaqController::class, 'index']);
-//Route::get('/faqs/create', [FaqController::class, 'create']);
-//Route::post('/faqs', [FaqController::class, 'store']);
-//Route::get('/faqs/{faq}', [FaqController::class, 'show']);
-//Route::get('/faqs/{faq}/edit', [FaqController::class, 'edit']);
-//Route::put('/faqs/{faq}', [FaqController::class, 'update']);
-//Route::delete('/faqs/{faq}', [FaqController::class, 'destroy']);

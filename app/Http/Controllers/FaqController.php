@@ -10,14 +10,12 @@ class FaqController extends Controller
 {
     public function index()
     {
-        return view('faqs.index', [
-            'faqs' => Faq::all()
-        ]);
+        return view('faqs.index', ['faqs' => Faq::all()]);
     }
 
     public function create()
     {
-
+        return view('faqs.create');
     }
 
     public function store(Request $request)

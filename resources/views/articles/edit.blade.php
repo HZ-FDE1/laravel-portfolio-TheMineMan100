@@ -44,6 +44,14 @@
                         <div class="control">
                             <button class="button is-link" type="submit">Submit</button>
                         </div>
+
+                    </div>
+                </form>
+                <form method="POST" action="/articles/{{ $article->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <div class="control">
+                        <button class="button is-link" type="submit">Delete</button>
                     </div>
                 </form>
             </div>

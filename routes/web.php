@@ -35,10 +35,10 @@ Route::get('/profile/', [ProfileController::class, 'show']);
 
 Route::get('/dashboard/', [DashboardController::class, 'show']);
 
-Route::get('/faq', [FaqController::class, 'index']);
-Route::get('/faq/create', [FaqController::class, 'create']);
-Route::post('/faq', [FaqController::class, 'store']);
-Route::get('/faq/{faq}', [FaqController::class, 'show']);
-Route::get('/faq/{faq}/edit', [FaqController::class, 'edit']);
-Route::put('/faq/{faq}', [FaqController::class, 'update']);
-Route::delete('/faq/{faq}', [FaqController::class, 'destroy']);
+Route::get('/faqs', [FaqController::class, 'index']);
+Route::get('/faqs/create', [FaqController::class, 'create']);
+Route::post('/faqs', [FaqController::class, 'store']);
+Route::get('/faqs/{faq}', [FaqController::class, 'show']);
+Route::get('/faqs/{faq}/edit', [FaqController::class, 'edit']);
+Route::put('/faqs/{faq}', [FaqController::class, 'update']);
+Route::delete('/faqs/{faq}', [FaqController::class, 'destroy']);

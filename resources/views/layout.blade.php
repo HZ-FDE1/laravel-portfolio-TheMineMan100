@@ -26,7 +26,7 @@
                         <a href="./post1-study-choice">Study Choice</a>
                     </div>
                 </li>
-                <li class="{{ Request::path() === 'faq' ? 'current' : '' }}"><a href="./faq">FAQ</a></li>
+                <li class="{{ Request::path() === 'faqs' ? 'current' : '' }}"><a href="/faqs">FAQ</a></li>
             </ul>
         </nav>
         <aside>

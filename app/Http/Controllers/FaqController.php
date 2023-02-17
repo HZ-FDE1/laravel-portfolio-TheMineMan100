@@ -10,7 +10,7 @@ class FaqController extends Controller
 {
     public function index()
     {
-        return view('faq', [
+        return view('faqs.index', [
             'faqs' => Faq::all()
         ]);
     }
@@ -27,9 +27,7 @@ class FaqController extends Controller
 
     public function show(Faq $faq)
     {
-        return view('faq', [
-            'faqs' => Faq::all()
-        ]);
+
     }
 
     public function edit(Faq $faq)

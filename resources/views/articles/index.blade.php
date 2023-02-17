@@ -10,30 +10,32 @@
 
 @section('content')
     <article>
-            @foreach($articles as $article)
-                <div class="content">
-                    <div class="title">
-                        <h2>
-                            <a href="/articles/{{ $article->id }}">
-                                {{ $article->title }}
-                            </a>
-                        </h2>
-                    </div>
+        <p><a href="/articles/create">CREATE NEW ARTICLE</a></p>
 
-                    <p>
-                        <img
-                            src="img/game-developer-profession.png"
-                            alt="Man working on a video game."
-                            class="blog-image"
-                        />
-                    </p>
-
-                    {!! $article->excerpt !!}
+        @foreach($articles as $article)
+            <div class="content">
+                <div class="title">
+                    <h2>
+                        <a href="/articles/{{ $article->id }}">
+                            {{ $article->title }}
+                        </a>
+                    </h2>
                 </div>
 
-                @if($article->id !== $articles->last()->id)
-                        <hr>
-                @endif
-            @endforeach
+                <p>
+                    <img
+                        src="img/game-developer-profession.png"
+                        alt="Man working on a video game."
+                        class="blog-image"
+                    />
+                </p>
+
+                {!! $article->excerpt !!}
+            </div>
+
+            @if($article->id !== $articles->last()->id)
+                <hr>
+            @endif
+        @endforeach
     </article>
 @endsection

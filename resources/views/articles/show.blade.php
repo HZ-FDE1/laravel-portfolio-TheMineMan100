@@ -15,6 +15,7 @@
 @section('content')
     <article>
         <div id="profile-text">
+            <p><a href="/articles/{{ $article->id }}/edit">EDIT ARTICLE</a></p>
             {{ $article->body }}
         </div>
     </article>

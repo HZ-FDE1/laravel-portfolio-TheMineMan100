@@ -20,49 +20,43 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $article = new Article();
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
+        Article::create($this->validateArticle($request));
 
-        return redirect('/articles');
+        return redirect(route('articles.index'));
     }
 
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::find($id);
-
         return view('articles.show', ['article' => $article]);
     }
 
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
-
         return view('articles.edit', compact('article'));
     }
 
-    public function update($id)
+    public function update(Article $article, Request $request)
     {
-        $article = Article::find($id);
+        $article->update($this->validateArticle($request));
 
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-
-        return redirect('/articles/' . $article->id);
+        return redirect($article->path());
     }
 
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-        $article = Article::find($id);
-
         $article->delete();
 
-        return redirect('/articles');
+        return redirect(route('articles.index'));
+    }
+
+    protected function validateArticle(Request $request)
+    {
+        return $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 }

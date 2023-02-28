@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Models\Faq;
 
@@ -18,15 +19,11 @@ class FaqController extends Controller
         return view('faqs.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $faq = new Faq();
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-        $faq->link = request('link');
-        $faq->save();
+        Faq::create($this->validateFaq($request));
 
-        redirect('/faqs');
+        redirect(route('faqs.index'));
     }
 
     public function show(Faq $faq)
@@ -34,23 +31,16 @@ class FaqController extends Controller
 
     }
 
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        $faq = Faq::find($id);
-
         return view('faqs.edit', compact('faq'));
     }
 
-    public function update($id)
+    public function update(Faq $faq, Request $request)
     {
-        $faq = Faq::find($id);
+        $faq->update($this->validateFaq($request));
 
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-        $faq->link = request('link');
-        $faq->save();
-
-        return redirect('/faqs');
+        return redirect(route('faqs.index'));
     }
 
     public function destroy($id)
@@ -59,6 +49,14 @@ class FaqController extends Controller
 
         $faq->delete();
 
-        return redirect('/faqs');
+        return redirect(route('faqs.index'));
+    }
+
+    public function validateFaq(Request $request)
+    {
+        return $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
     }
 }

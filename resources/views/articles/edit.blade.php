@@ -12,7 +12,7 @@
     <article>
         <div id="wrapper">
             <div id="page" class="container">
-                <form method="POST" action="/articles/{{ $article->id }}">
+                <form method="POST" action="{{ $article->path() }}">
                     @csrf
                     @method('PUT')
 
@@ -20,7 +20,16 @@
                         <label class="label" for="title">Title</label>
 
                         <div class="control">
-                            <input class="input" type="text" name="title" id="title" value="{{ $article->title }}" size="60">
+                            <input
+                                class="input"
+                                type="text"
+                                name="title"
+                                id="title"
+                                value="{{ $article->title }}"
+                                size="60">
+                            @error('title')
+                            <p class="help is-danger">{{ $errors->first('title') }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -29,6 +38,9 @@
 
                         <div class="control">
                             <textarea name="excerpt" id="excerpt" cols="60" rows="6">{{ $article->excerpt }}</textarea>
+                            @error('excerpt')
+                            <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -37,6 +49,9 @@
 
                         <div class="control">
                             <textarea name="body" id="body" cols="60" rows="12">{{ $article->body }}</textarea>
+                            @error('body')
+                            <p class="help is-danger">{{ $errors->first('body') }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -47,7 +62,7 @@
 
                     </div>
                 </form>
-                <form method="POST" action="/articles/{{ $article->id }}">
+                <form method="POST" action="{{ $article->path() }}">
                     @csrf
                     @method('DELETE')
                     <div class="control">

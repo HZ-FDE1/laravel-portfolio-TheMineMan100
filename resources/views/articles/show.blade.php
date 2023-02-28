@@ -15,7 +15,7 @@
 @section('content')
     <article>
         <div id="profile-text">
-            <p><a href="/articles/{{ $article->id }}/edit">EDIT ARTICLE</a></p>
+            <p><a href="{{ route('articles.edit', $article) }}">EDIT ARTICLE</a></p>
             {{ $article->body }}
         </div>
     </article>

@@ -12,7 +12,7 @@
     <article>
         <div id="wrapper">
             <div id="page" class="container">
-                <form method="POST" action="/faqs">
+                <form method="POST" action="{{ route('faqs.index') }}">
                     @csrf
 
                     <div class="field">

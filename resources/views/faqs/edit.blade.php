@@ -12,7 +12,7 @@
     <article>
         <div id="wrapper">
             <div id="page" class="container">
-                <form method="POST" action="/faqs/{{ $faq->id }}">
+                <form method="POST" action="{{ $faq->path() }}">
                     @csrf
                     @method('PUT')
 
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </form>
-                <form method="POST" action="/faqs/{{ $faq->id }}">
+                <form method="POST" action="{{ $faq->path() }}">
                     @csrf
                     @method('DELETE')
                     <div class="control">

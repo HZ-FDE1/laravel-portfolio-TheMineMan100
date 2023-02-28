@@ -10,13 +10,13 @@
 
 @section('content')
     <article>
-        <p><a href="/articles/create">CREATE NEW ARTICLE</a></p>
+        <p><a href="{{ route('articles.create') }}">CREATE NEW ARTICLE</a></p>
 
         @foreach($articles as $article)
             <div class="content">
                 <div class="title">
                     <h2>
-                        <a href="/articles/{{ $article->id }}">
+                        <a href="{{ $article->path() }}">
                             {{ $article->title }}
                         </a>
                     </h2>

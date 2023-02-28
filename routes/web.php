@@ -6,6 +6,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GradeController;
 use App\Http\Controllers\FaqController;
 
 /*
@@ -26,6 +27,8 @@ Route::get('/posts/{post}', [PostsController::class, 'show']);
 Route::get('/profile/', [ProfileController::class, 'show']);
 
 Route::get('/dashboard/', [DashboardController::class, 'show']);
+
+Route::resource('/grades', GradeController::class);
 
 Route::resource('/articles', ArticlesController::class);
 

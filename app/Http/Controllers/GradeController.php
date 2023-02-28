@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Grade;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreGradeRequest;
-use App\Http\Requests\UpdateGradeRequest;
+use Illuminate\Http\Request;
 
 class GradeController extends Controller
 {
@@ -16,7 +15,7 @@ class GradeController extends Controller
      */
     public function index()
     {
-        //
+        return view('grades.index', ['grades' => Grade::all()]);
     }
 
     /**
@@ -26,18 +25,20 @@ class GradeController extends Controller
      */
     public function create()
     {
-        //
+        return view('grades.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreGradeRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreGradeRequest $request)
+    public function store(Request $request)
     {
-        //
+        Grade::create($this->validateGrade($request));
+
+        redirect('grades.index');
     }
 
     /**
@@ -59,19 +60,21 @@ class GradeController extends Controller
      */
     public function edit(Grade $grade)
     {
-        //
+        return view('grades.edit', compact('grade'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateGradeRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateGradeRequest $request, Grade $grade)
+    public function update(Request $request, Grade $grade)
     {
-        //
+        $grade->update($this->validateGrade($request));
+
+        return redirect(route('grades.index'));
     }
 
     /**
@@ -82,6 +85,19 @@ class GradeController extends Controller
      */
     public function destroy(Grade $grade)
     {
-        //
+        $grade->delete();
+
+        return redirect(route('grades.index'));
+    }
+
+    protected function validateGrade(Request $request)
+    {
+        return $request->validate([
+            'course_name' => 'required',
+            'test_name' => 'required',
+            'ec' => 'required',
+            'lowest_passing_grade' => 'between:0,10',
+            'best_grade' => 'between:0,10'
+        ]);
     }
 }

@@ -16,6 +16,7 @@
                 <li class="{{ Request::path() === '/' ? 'current' : '' }}"><a href="/">Home</a></li>
                 <li class="{{ Request::path() === 'profile' ? 'current' : '' }}"><a href="/profile">Profile</a></li>
                 <li class="{{ Request::path() === 'dashboard' ? 'current' : '' }}"><a href="/dashboard">Dashboard</a></li>
+                <li class="{{ Request::path() === 'grades' ? 'current' : '' }}"><a href="/grades">Grades</a></li>
                 <li class="blog-dropdown">
                     <a href="/articles" class="{{ Request::path() === 'articles' ? 'current' : '' }} blog-dropdown-button">Blog</a>
                     <div class="blog-dropdown-content">

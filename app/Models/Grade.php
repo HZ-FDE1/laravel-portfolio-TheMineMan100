@@ -9,6 +9,13 @@ class Grade extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['course_name', 'test_name', 'ec', 'lowest_passing_grade', 'best_grade', 'passed_at'];
+
+    public function path()
+    {
+        return route('grades.show', $this);
+    }
+
     public function addResult($result)
     {
         if($result >= $this->best_grade)

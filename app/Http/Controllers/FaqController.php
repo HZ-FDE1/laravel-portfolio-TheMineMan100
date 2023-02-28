@@ -43,10 +43,8 @@ class FaqController extends Controller
         return redirect(route('faqs.index'));
     }
 
-    public function destroy($id)
+    public function destroy(Faq $faq)
     {
-        $faq = Faq::find($id);
-
         $faq->delete();
 
         return redirect(route('faqs.index'));

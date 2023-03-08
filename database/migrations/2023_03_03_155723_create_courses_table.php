@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('cu_code');
             $table->string('name');
             $table->decimal('credits');
-            $table->timestamp('passed_at');
+            $table->timestamp('passed_at')->nullable();
             $table->timestamps();
         });
     }

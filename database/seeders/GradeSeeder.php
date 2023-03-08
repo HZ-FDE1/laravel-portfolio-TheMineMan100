@@ -20,7 +20,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 1,
             'test_name' => 'Assessment website',
-            'weighing_factor' => 100,
+            'weighing_factor' => 1.00,
             'best_grade' => 10.0,
             'created_at' => now()
         ]);
@@ -29,7 +29,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 2,
             'test_name' => 'Written exam',
-            'weighing_factor' => 100,
+            'weighing_factor' => 1.00,
             'best_grade' => 9.1,
             'created_at' => now()
         ]);
@@ -38,7 +38,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 3,
             'test_name' => 'Case study exam',
-            'weighing_factor' => 100,
+            'weighing_factor' => 1.00,
             'best_grade' => 9.6,
             'created_at' => now()
         ]);
@@ -48,7 +48,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 4,
             'test_name' => 'Group assignment',
-            'weighing_factor' => 50,
+            'weighing_factor' => 0.50,
             'best_grade' => 8.8,
             'created_at' => now()
         ]);
@@ -56,7 +56,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 4,
             'test_name' => 'Case study exam',
-            'weighing_factor' => 50,
+            'weighing_factor' => 0.50,
             'best_grade' => 10.0,
             'created_at' => now()
         ]);
@@ -66,7 +66,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 5,
             'test_name' => 'Case study exam',
-            'weighing_factor' => 100,
+            'weighing_factor' => 1.00,
             'created_at' => now()
         ]);
 
@@ -74,21 +74,21 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 6,
             'test_name' => 'Criterium based interview',
-            'weighing_factor' => 33,
+            'weighing_factor' => 0.33,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 6,
             'test_name' => 'Assignment',
-            'weighing_factor' => 33,
+            'weighing_factor' => 0.33,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 6,
             'test_name' => 'Case study exam',
-            'weighing_factor' => 34,
+            'weighing_factor' => 0.34,
             'created_at' => now()
         ]);
 
@@ -97,21 +97,21 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 7,
             'test_name' => 'Final delivery',
-            'weighing_factor' => 25,
+            'weighing_factor' => 0.25,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 7,
             'test_name' => 'Report of acceptance tests and optional assessments',
-            'weighing_factor' => 25,
+            'weighing_factor' => 0.25,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 7,
             'test_name' => 'IT Development portfolio',
-            'weighing_factor' => 50,
+            'weighing_factor' => 0.50,
             'created_at' => now()
         ]);
 
@@ -120,7 +120,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 8,
             'test_name' => 'Dutch Test',
-            'weighing_factor' => 5,
+            'weighing_factor' => 0.05,
             'best_grade' => 10.0,
             'created_at' => now()
         ]);
@@ -128,14 +128,14 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 8,
             'test_name' => 'English Test',
-            'weighing_factor' => 5,
+            'weighing_factor' => 0.05,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 8,
             'test_name' => 'Criterium focused interview',
-            'weighing_factor' => 90,
+            'weighing_factor' => 0.90,
             'created_at' => now()
         ]);
 
@@ -144,7 +144,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 9,
             'test_name' => 'Portfolio',
-            'weighing_factor' => 100,
+            'weighing_factor' => 1.00,
             'best_grade' => 10.0, // Says OK in Osiris
             'created_at' => now()
         ]);
@@ -153,7 +153,7 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 10,
             'test_name' => 'Portfolio',
-            'weighing_factor' => 100,
+            'weighing_factor' => 1.00,
             'created_at' => now()
         ]);
 
@@ -161,28 +161,28 @@ class GradeSeeder extends Seeder
         DB::table('grades')->insert([
             'course_id' => 11,
             'test_name' => 'Reading and Use of English',
-            'weighing_factor' => 40,
+            'weighing_factor' => 0.40,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 11,
             'test_name' => 'Writing',
-            'weighing_factor' => 20,
+            'weighing_factor' => 0.20,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 11,
             'test_name' => 'Listening',
-            'weighing_factor' => 20,
+            'weighing_factor' => 0.20,
             'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
             'course_id' => 11,
             'test_name' => 'Speaking',
-            'weighing_factor' => 20,
+            'weighing_factor' => 0.20,
             'created_at' => now()
         ]);
     }

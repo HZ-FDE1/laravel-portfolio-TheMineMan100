@@ -15,149 +15,175 @@ class GradeSeeder extends Seeder
      */
     public function run()
     {
+        // Grades Quartile 1
+        // Grades PCO
         DB::table('grades')->insert([
-            'course_name' => 'Program- and Career Orientation',
+            'course_id' => 1,
             'test_name' => 'Assessment website',
-            'ec' => 2.5,
+            'weighing_factor' => 100,
             'best_grade' => 10.0,
-            'passed_at' => '2022-10-18',
-            'created_at' => now(),
+            'created_at' => now()
         ]);
 
+        // Grades CSB
         DB::table('grades')->insert([
-            'course_name' => 'Computer Science Basics',
+            'course_id' => 2,
             'test_name' => 'Written exam',
-            'ec' => 5.0,
+            'weighing_factor' => 100,
             'best_grade' => 9.1,
-            'passed_at' => '2022-11-07',
-            'created_at' => now(),
+            'created_at' => now()
         ]);
 
+        // Grades Programming Basics
         DB::table('grades')->insert([
-            'course_name' => 'Programming Basics',
+            'course_id' => 3,
             'test_name' => 'Case study exam',
-            'ec' => 5.0,
+            'weighing_factor' => 100,
             'best_grade' => 9.6,
-            'passed_at' => '2022-10-11',
-            'created_at' => now(),
+            'created_at' => now()
         ]);
 
+        // Grades Quartile 2
+        // Grades OOP
         DB::table('grades')->insert([
-            'course_name' => 'PPD-E Dutch Class',
-            'test_name' => 'Dutch Test',
-            'ec' => 12.5 * 0.05,
-            'passed_at' => '2023-02-01',
-            'created_at' => now(),
-        ]);
-
-        DB::table('grades')->insert([
-            'course_name' => 'PPD-E Dutch Class',
-            'test_name' => 'English Test',
-            'ec' => 12.5 * 0.05,
-            'created_at' => now(),
-        ]);
-
-        DB::table('grades')->insert([
-            'course_name' => 'PPD-E Dutch Class',
-            'test_name' => 'Criterium focused interview',
-            'ec' => 12.5 * 0.9,
-            'created_at' => now(),
-        ]);
-
-        DB::table('grades')->insert([
-            'course_name' => 'IT Personality',
-            'test_name' => 'IT Personality - projectweek 1',
-            'ec' => 1.25,
-            'passed_at' => '2022-11-04',
-            'created_at' => now(),
-        ]);
-
-        DB::table('grades')->insert([
-            'course_name' => 'IT Personality',
-            'test_name' => 'IT Personality 1 Portfolio',
-            'ec' => 1.25,
-            'created_at' => now(),
-        ]);
-
-        DB::table('grades')->insert([
-            'course_name' => 'Object-Oriented Programming',
+            'course_id' => 4,
             'test_name' => 'Group assignment',
-            'ec' => 5.0,
+            'weighing_factor' => 50,
             'best_grade' => 8.8,
-            'passed_at' => '2023-01-24',
-            'created_at' => now(),
+            'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
-            'course_name' => 'Object-Oriented Programming',
+            'course_id' => 4,
             'test_name' => 'Case study exam',
-            'ec' => 5.0,
+            'weighing_factor' => 50,
             'best_grade' => 10.0,
-            'passed_at' => '2022-12-15',
-            'created_at' => now(),
+            'created_at' => now()
         ]);
 
+        // Grades Quartile 3
+        // Grades FDev 1
         DB::table('grades')->insert([
-            'course_name' => 'Framework development 1',
+            'course_id' => 5,
             'test_name' => 'Case study exam',
-            'ec' => 5.0,
-            'created_at' => now(),
+            'weighing_factor' => 100,
+            'created_at' => now()
         ]);
 
+        // Grades FProj 1
         DB::table('grades')->insert([
-            'course_name' => 'Framework Project 1',
+            'course_id' => 6,
             'test_name' => 'Criterium based interview',
-            'ec' => 2.5,
-            'created_at' => now(),
+            'weighing_factor' => 33,
+            'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
-            'course_name' => 'Framework Project 1',
+            'course_id' => 6,
             'test_name' => 'Assignment',
-            'ec' => 2.5,
-            'created_at' => now(),
+            'weighing_factor' => 33,
+            'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
-            'course_name' => 'Framework Project 1',
+            'course_id' => 6,
             'test_name' => 'Case study exam',
-            'ec' => 2.5,
-            'created_at' => now(),
+            'weighing_factor' => 34,
+            'created_at' => now()
         ]);
 
+        // Grades Quartile 4
+        // Grades FProj 2
         DB::table('grades')->insert([
-            'course_name' => 'Framework Project 2',
+            'course_id' => 7,
             'test_name' => 'Final delivery',
-            'ec' => 2.5,
-            'created_at' => now(),
+            'weighing_factor' => 25,
+            'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
-            'course_name' => 'Framework Project 2',
+            'course_id' => 7,
             'test_name' => 'Report of acceptance tests and optional assessments',
-            'ec' => 2.5,
-            'created_at' => now(),
+            'weighing_factor' => 25,
+            'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
-            'course_name' => 'Framework Project 2',
+            'course_id' => 7,
             'test_name' => 'IT Development portfolio',
-            'ec' => 5.0,
-            'created_at' => now(),
+            'weighing_factor' => 50,
+            'created_at' => now()
+        ]);
+
+        // Other Grades
+        // Grades PPD-E
+        DB::table('grades')->insert([
+            'course_id' => 8,
+            'test_name' => 'Dutch Test',
+            'weighing_factor' => 5,
+            'best_grade' => 10.0,
+            'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
-            'course_name' => 'IT Personality',
-            'test_name' => 'IT Personality 2 Portfolio',
-            'ec' => 2.5,
-            'created_at' => now(),
+            'course_id' => 8,
+            'test_name' => 'English Test',
+            'weighing_factor' => 5,
+            'created_at' => now()
         ]);
 
         DB::table('grades')->insert([
-            'course_name' => 'IT Personality',
-            'test_name' => 'IT Personality International week Portfolio',
-            'ec' => 2.5,
-            'created_at' => now(),
+            'course_id' => 8,
+            'test_name' => 'Criterium focused interview',
+            'weighing_factor' => 90,
+            'created_at' => now()
+        ]);
+
+        // Grades ITP
+        // Project Week
+        DB::table('grades')->insert([
+            'course_id' => 9,
+            'test_name' => 'Portfolio',
+            'weighing_factor' => 100,
+            'best_grade' => 10.0, // Says OK in Osiris
+            'created_at' => now()
+        ]);
+
+        // International Week
+        DB::table('grades')->insert([
+            'course_id' => 10,
+            'test_name' => 'Portfolio',
+            'weighing_factor' => 100,
+            'created_at' => now()
+        ]);
+
+        //Grades Founcation Course
+        DB::table('grades')->insert([
+            'course_id' => 11,
+            'test_name' => 'Reading and Use of English',
+            'weighing_factor' => 40,
+            'created_at' => now()
+        ]);
+
+        DB::table('grades')->insert([
+            'course_id' => 11,
+            'test_name' => 'Writing',
+            'weighing_factor' => 20,
+            'created_at' => now()
+        ]);
+
+        DB::table('grades')->insert([
+            'course_id' => 11,
+            'test_name' => 'Listening',
+            'weighing_factor' => 20,
+            'created_at' => now()
+        ]);
+
+        DB::table('grades')->insert([
+            'course_id' => 11,
+            'test_name' => 'Speaking',
+            'weighing_factor' => 20,
+            'created_at' => now()
         ]);
     }
 }

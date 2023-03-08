@@ -17,9 +17,8 @@ class DashboardController extends Controller
     {
         $grades = Grade::all();
         $totalEc = 0;
-        foreach ($grades as $grade)
-        {
-            if($grade->passed_at) {
+        foreach ($grades as $grade) {
+            if ($grade->passed_at) {
                 $totalEc += $grade->ec;
             }
         }

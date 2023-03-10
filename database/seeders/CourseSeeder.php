@@ -44,7 +44,7 @@ class CourseSeeder extends Seeder
         DB::table('courses')->insert([
             'cu_code' => 'CU75004V1',
             'name' => 'Object-Oriented Programming',
-            'credits' => 5,
+            'credits' => 10,
             'passed_at' => '2022-10-11',
             'created_at' => now()
         ]);

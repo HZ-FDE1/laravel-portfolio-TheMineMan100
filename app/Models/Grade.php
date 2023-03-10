@@ -22,17 +22,9 @@ class Grade extends Model
             $this->best_grade = $result;
         }
 
-        if (isset($this->lowest_passing_grade)) {
-            if ($this->best_grade >= $this->lowest_passing_grade && ! $this->passed_at) {
-                $this->passed_at = now();
-            }
-        } else {
-            if ($this->best_grade >= 5.5) {
-                $this->passed_at = now();
-            }
-        }
-
         $this->save();
+
+        $this->course()->assignCredits();
     }
 
     public function course()

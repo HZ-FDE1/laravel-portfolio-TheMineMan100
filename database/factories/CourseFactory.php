@@ -17,7 +17,10 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'cu_code' => 'CU' . fake()->numberBetween(75000, 75999) . 'V' . fake()->numberBetween(1, 9),
+            'name' => fake()->text,
+            'credits' => fake()->randomFloat(2),
+            'passed_at' => fake()->date
         ];
     }
 }

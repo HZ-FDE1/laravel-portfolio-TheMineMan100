@@ -17,23 +17,6 @@
                     @method('PUT')
 
                     <div class="field">
-                        <label class="label" for="course_name">Course Name</label>
-
-                        <div class="control">
-                            <input
-                                class="input"
-                                type="text"
-                                name="course_name"
-                                id="course_name"
-                                value="{{ $grade->course_name }}"
-                                size="60">
-                            @error('course_name')
-                            <p class="help is-danger">{{ $errors->first('course_name') }}</p>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="field">
                         <label class="label" for="test_name">Test Name</label>
 
                         <div class="control">
@@ -51,18 +34,21 @@
                     </div>
 
                     <div class="field">
-                        <label class="label" for="ec">EC Value</label>
+                        <label class="label" for="weighing_factor">Weighing Factor</label>
 
                         <div class="control">
                             <input
                                 class="input"
                                 type="number"
-                                name="ec"
-                                id="ec"
-                                value="{{ $grade->ec }}">
+                                step="0.01"
+                                name="weighing_factor"
+                                id="weighing_factor"
+                                min="0"
+                                max="1"
+                                value="{{ $grade->weighing_factor }}">
                         </div>
-                        @error('ec')
-                        <p class="help is-danger">{{ $errors->first('ec') }}</p>
+                        @error('test_name')
+                        <p class="help is-danger">{{ $errors->first('test_name') }}</p>
                         @enderror
                     </div>
 
@@ -73,9 +59,10 @@
                             <input
                                 class="input"
                                 type="number"
+                                step="0.1"
                                 name="lowest_passing_grade"
                                 id="lowest_passing_grade"
-                                min="0"
+                                min="1"
                                 max="10"
                                 value="{{ $grade->lowest_passing_grade }}">
                         </div>
@@ -96,32 +83,19 @@
                         </div>
                     </div>
 
-                    <div class="field">
-                        <label class="label" for="passed_at">Passed At</label>
-
-                        <div class="control">
-                            <input
-                                class="input"
-                                type="date"
-                                name="passed_at"
-                                id="passed_at"
-                                value="{{ $grade->passed_at }}">
-                        </div>
-                    </div>
-
                     <div class="field is-grouped">
                         <div class="control">
                             <button class="button is-link" type="submit">Submit</button>
                         </div>
                     </div>
                 </form>
-                <form method="POST" action="{{ $grade->path() }}">
-                    @csrf
-                    @method('DELETE')
-                    <div class="control">
-                        <button class="button is-link" type="submit">Delete</button>
-                    </div>
-                </form>
+{{--                <form method="POST" action="{{ $grade->path() }}">--}}
+{{--                    @csrf--}}
+{{--                    @method('DELETE')--}}
+{{--                    <div class="control">--}}
+{{--                        <button class="button is-link" type="submit">Delete</button>--}}
+{{--                    </div>--}}
+{{--                </form>--}}
             </div>
         </div>
     </article>

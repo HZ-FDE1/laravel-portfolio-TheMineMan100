@@ -74,7 +74,7 @@ class GradeController extends Controller
     {
         $grade->update($this->validateGrade($request));
 
-        return redirect(route('grades.index'));
+        return redirect(route('dashboard'));
     }
 
     /**
@@ -93,11 +93,10 @@ class GradeController extends Controller
     protected function validateGrade(Request $request)
     {
         return $request->validate([
-            'course_name' => 'required',
             'test_name' => 'required',
-            'ec' => 'required',
-            'lowest_passing_grade' => 'between:0,10',
-            'best_grade' => 'between:0,10'
+            'weighing_factor' => ['required', 'between:0,1'],
+            'lowest_passing_grade' => 'between:1,10',
+            'best_grade' => 'between:1,10'
         ]);
     }
 }

@@ -26,7 +26,7 @@ Route::get('/posts/{post}', [PostsController::class, 'show']);
 
 Route::get('/profile/', [ProfileController::class, 'show']);
 
-Route::get('/dashboard/', [DashboardController::class, 'show']);
+Route::get('/dashboard/', [DashboardController::class, 'show'])->name('dashboard');
 
 Route::resource('/grades', GradeController::class);
 

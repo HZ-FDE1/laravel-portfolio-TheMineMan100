@@ -47,8 +47,8 @@
                                 max="1"
                                 value="{{ $grade->weighing_factor }}">
                         </div>
-                        @error('test_name')
-                        <p class="help is-danger">{{ $errors->first('test_name') }}</p>
+                        @error('weighing_factor')
+                        <p class="help is-danger">{{ $errors->first('weighing_factor') }}</p>
                         @enderror
                     </div>
 
@@ -67,6 +67,9 @@
                                 value="{{ $grade->lowest_passing_grade }}">
                         </div>
                     </div>
+                    @error('lowest_passing_grade')
+                    <p class="help is-danger">{{ $errors->first('lowest_passing_grade') }}</p>
+                    @enderror
 
                     <div class="field">
                         <label class="label" for="best_grade">Best Grade</label>
@@ -75,6 +78,7 @@
                             <input
                                 class="input"
                                 type="number"
+                                step="0.1"
                                 name="best_grade"
                                 id="best_grade"
                                 min="0"
@@ -82,6 +86,9 @@
                                 value="{{ $grade->best_grade }}">
                         </div>
                     </div>
+                    @error('best_grade')
+                    <p class="help is-danger">{{ $errors->first('best_grade') }}</p>
+                    @enderror
 
                     <div class="field is-grouped">
                         <div class="control">

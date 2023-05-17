@@ -24,32 +24,32 @@
                                 type="text"
                                 name="title"
                                 id="title"
-                                size="60"
+                                size="64"
                                 value="{{ old('title') }}">
                             @error('title')
-                                <p class="help is-danger">{{ $errors->first('title') }}</p>
+                                <p style="color: orangered">{{ $errors->first('title') }}</p>
                             @enderror
                         </div>
                     </div>
 
-                    <div class="field">
+                    <div class="field margin-top-20 @error('excerpt') margin-top-0 @enderror">
                         <label class="label" for="excerpt">Excerpt</label>
 
                         <div class="control">
                             <textarea name="excerpt" id="excerpt" cols="60" rows="6">{{ old('excerpt') }}</textarea>
                             @error('excerpt')
-                            <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                            <p style="color: orangered">{{ $errors->first('excerpt') }}</p>
                             @enderror
                         </div>
                     </div>
 
-                    <div class="field">
+                    <div class="field margin-top-20 @error('body') margin-top-0 @enderror">
                         <label class="label" for="body">Body</label>
 
                         <div class="control">
                             <textarea name="body" id="body" cols="60" rows="12">{{ old('body') }}</textarea>
                             @error('body')
-                            <p class="help is-danger">{{ $errors->first('body') }}</p>
+                            <p style="color: orangered">{{ $errors->first('body') }}</p>
                             @enderror
                         </div>
                     </div>

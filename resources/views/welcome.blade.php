@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section ('title')
-    <title>Dashboard - Portfolio Site</title>
+    <title>Home - Portfolio Site</title>
 @endsection
 
 @section ('header')

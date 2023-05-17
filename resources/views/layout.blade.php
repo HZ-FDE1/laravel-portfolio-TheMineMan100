@@ -28,6 +28,22 @@
                     </div>
                 </li>
                 <li class="{{ Request::path() === 'faqs' ? 'current' : '' }}"><a href="/faqs">FAQ</a></li>
+                @guest()
+                    <li class="{{ Request::path() === 'register' ? 'current' : '' }}"><a href="/register">Register</a></li>
+                    <li class="{{ Request::path() === 'login' ? 'current' : '' }}"><a href="/login">Log in</a></li>
+                @else
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                             onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                    </li>
+                @endguest
             </ul>
         </nav>
         <aside>

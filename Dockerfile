@@ -1,16 +1,16 @@
 FROM php:8.1-apache
 
-#installing npm
+# Install NPM
 RUN apt-get update && \
     apt-get install -y npm
 
-#installing composer
+# Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-#pdo linken
+# Link PDO
 RUN docker-php-ext-install pdo pdo_mysql
 
-#working directory aangeven
+# Indiciate working directory
 RUN echo "ServerName laravel-app.local">> /etc/apache2/apache2.conf
 
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public

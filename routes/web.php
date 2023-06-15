@@ -22,6 +22,10 @@ use App\Http\Controllers\FaqController;
 
 Route::get('/', [WelcomeController::class, 'show']);
 
+Route::get('/error-500', function () {
+    abort(500);
+});
+
 Route::get('/posts/{post}', [PostsController::class, 'show']);
 
 Route::get('/profile/', [ProfileController::class, 'show']);

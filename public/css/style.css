@@ -15,6 +15,14 @@ details p {
     padding-bottom: 0;
 }
 
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-top-0 {
+    margin-top: 0;
+}
+
 body {
     background-image: url("../img/bluegray-forest-background.png");
     background-size: 100%;
@@ -373,6 +381,36 @@ summary:hover, summary:active {
 
 #hz-logo:hover, #hz-logo:active {
     background-color: #E7F6F2;
+}
+
+.error-home-button {
+    width: 160px;
+    height: 40px;
+    object-fit: cover;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 50px;
+    background-color: #A5C9CA;
+    color: #395B64;
+    border-radius: 3px;
+}
+
+.error-home-button:hover, .error-home-button:active {
+    background-color: #E7F6F2;
+    color: #395B64;
+}
+
+.error-text {
+    text-align: center;
+}
+
+.error-margin-bottom {
+    margin-bottom: 40px;
+}
+
+.validate-warning-text {
+    color: red;
 }
 
 .blog-return-button {
